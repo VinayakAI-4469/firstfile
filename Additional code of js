@@ -1,0 +1,19 @@
+function gcd(a, b) {
+  // Euclidean algorithm to find GCD
+  while (b !== 0) {
+    let temp = b;
+    b = a % b;
+    a = temp;
+  }
+  return a;
+}
+
+function lcm(a, b) {
+  if (a === 0 || b === 0) return 0;
+  return Math.abs(a * b) / gcd(a, b);
+}
+
+// Example usage:
+let num1 = 12;
+let num2 = 18;
+console.log(`LCM of ${num1} and ${num2} is:`, lcm(num1, num2));
